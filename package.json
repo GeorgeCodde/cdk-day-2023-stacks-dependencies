@@ -1,8 +1,9 @@
 {
   "name": "cdk-day-stacks-dependencies",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "bin": {
-    "cdk-day-stacks-dependencies": "bin/cdk-day-stacks-dependencies.js"
+    "cdk-day-stacks-dependencies": "bin/main.js"
   },
   "scripts": {
     "build": "tsc",
