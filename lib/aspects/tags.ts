@@ -22,7 +22,7 @@ interface TaggerProps {
 }
 
 /**
- * CDK Aspect to apply some Nira default tags to all resources in the scope provided
+ * CDK Aspect to apply some default tags to all resources in the scope provided
  *
  * @example
  * import { Aspects } from 'aws-cdk-lib';

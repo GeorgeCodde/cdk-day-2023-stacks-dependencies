@@ -22,6 +22,8 @@ According to the blast radius:
 
 ## Dependency problematic situations
 
+Creation is not an issue in most of the cases, we just provide the desired values from one stack to another and "the magic" happens. Problems appear when we have to change something in that dependencies, either if we want to remove a no longer used dependency or if we want to change the value of the "shared" value between stacks.
+
 ### Remove an unused exported value
 
 **Affects**:
@@ -44,4 +46,4 @@ E.g. security group from `stackA` that is used in `stackB`.
 
 CDK will naturally follow the stacks dependency tree order to apply changes but exported value in stackA cannot be updated since it’s used in `stackB` and can happen that CloudFormation is unable to know if stackB needs to update/remove/delete the usage of that value.
 
-In this case we can even run into a situation where we cannot update stackB independently without removing any reference to the old value first, which can be problematic or even unnacceptable.
+In this case we can even run into a situation where we cannot update stackB independently without removing any reference to the old value first, which can be problematic or even unacceptable.
