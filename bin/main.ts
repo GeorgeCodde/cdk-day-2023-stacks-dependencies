@@ -11,6 +11,7 @@ const app = new cdk.App();
  * Simple non-deterministic inherit dependency between a stackA defining VPC and 
  * stackB creating a security group within that VPC
  * 
+*/
 import { ExampleA, ExampleB } from '../lib/stacks';
 
 const stackA = new ExampleA(app, 'ExampleA');
@@ -19,7 +20,6 @@ const stackB = new ExampleB(app, 'ExampleB', {
   vpc: stackA.vpc,
   managementSecurityGroup: stackA.managementSecurityGroup,
 });
-*/
 
 /**
  * 02 - DB Example
@@ -127,9 +127,8 @@ stackB.addDependency(stackA);
 /**
  * 08 - SSM parameters
  * 
- * Share values across stacks using SSM parameters
+ * Share values across stacks using SSM parameters with CloudFormation Dynamic references
  * 
-*/
 import { CoreStack, DemoStack } from '../lib/stacks';
 
 const env = {
@@ -142,6 +141,7 @@ const stackA = new CoreStack(app, 'ExampleA', { env });
 const stackB = new DemoStack(app, 'ExampleB', { env });
 
 stackB.addDependency(stackA);
+*/
 
 cdk.Aspects.of(stackA).add(new Tagger({
   project: 'cdkday-talk',

@@ -54,8 +54,13 @@ export class NetworkStack extends cdk.Stack {
     })
   }
 
-  public static getManagementSecurityGroup(scope: Construct, id: string): ec2.ISecurityGroup {
-    const managementSecurityGroupId = ssm.StringParameter.fromStringParameterName(scope, `${id}MgmntSGId`,
+  public static getManagementSecurityGroup(
+    scope: Construct,
+    id: string,
+  ): ec2.ISecurityGroup {
+    const managementSecurityGroupId = ssm.StringParameter.fromStringParameterName(
+      scope,
+      `${id}MgmntSGId`,
       NetworkStack.getMgmntSgIdSSMParamName(),
     );
 
